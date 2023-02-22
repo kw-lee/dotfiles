@@ -41,6 +41,7 @@ require("lazy").setup({
   { "gregsexton/MatchTag", ft = "html" }, -- html5 support
   { "othree/html5.vim", ft = "html" }, -- pug / jade support
   { "digitaltoad/vim-pug", ft = { "jade", "pug" } }, -- nunjucks support
+  { 'wuelnerdotexe/vim-astro', config = function() vim.cmd([[let g:astro_typescript = 'enable']]) end },
   -- Plug "niftylettuce/vim-jinja"
   { "Glench/Vim-Jinja2-Syntax", ft = { "jinja", "nunjucks" } }, -- edit quickfix list
   { "itchyny/vim-qfedit", event = "VeryLazy" }, -- liquid support
@@ -76,17 +77,22 @@ require("lazy").setup({
   "hrsh7th/cmp-vsnip",
   "hrsh7th/vim-vsnip-integ", -- add color highlighting to hex values
   {
-    "norcalli/nvim-colorizer.lua",
+    "NvChad/nvim-colorizer.lua",
     config = function()
-      require("colorizer").setup({ '*' }, {
-        RGB = true,
-        RRGGBB = true,
-        names = true,
-        RRGGBBAA = true,
-        rgb_fn = true,
-        hsl_fn = true,
-        css = true,
-        css_fn = true
+      require("colorizer").setup({
+        filetypes = { '*' },
+        user_default_options = {
+          mode = "background",
+          tailwind = true,
+          RGB = true,
+          RRGGBB = true,
+          names = true,
+          RRGGBBAA = true,
+          rgb_fn = true,
+          hsl_fn = true,
+          css = true,
+          css_fn = true
+        }
       })
     end
   }, -- use devicons for filetypes
@@ -136,7 +142,13 @@ require("lazy").setup({
   }, -- neovim completion
   {
     "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-nvim-lua", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path" }
+    dependencies = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      { "roobert/tailwindcss-colorizer-cmp.nvim", config = true }
+    }
   }, -- treesitter enables an AST-like understanding of files
   {
     "nvim-treesitter/nvim-treesitter",

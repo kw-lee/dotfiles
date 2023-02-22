@@ -33,7 +33,7 @@ null_ls.setup({
 })
 
 mason_lspconfig.setup({
-  ensure_installed = { "eslint", "tsserver", "sumneko_lua", "denols", "vimls" },
+  ensure_installed = { "eslint", "tsserver", "lua_ls", "denols", "vimls", "astro", "tailwindcss" },
   automatic_installation = true,
   ui = { check_outdated_servers_on_open = true }
 })
@@ -143,7 +143,7 @@ local lua_settings = {
     },
     workspace = {
       -- Make the server aware of Neovim runtime files
-      library = { [vim.fn.expand("$VIMRUNTIME/lua")] = true, [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true }
+      library = { [vim.fn.expand("$VIMRUNTIME/lua")] = true,[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true }
     }
   }
 }
@@ -163,10 +163,17 @@ end
 
 lspconfig.rust_analyzer.setup(make_config(function(config) return config end))
 
+lspconfig.tailwindcss.setup(make_config(function(config)
+  config.root_dir = lspconfig.util.root_pattern("tailwind.config.js", "tailwind.config.cjs")
+  return config
+end))
+
 lspconfig.eslint.setup(make_config(function(config)
   config.filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" }
   return config
 end))
+
+lspconfig.astro.setup(make_config(function(config) return config end))
 
 lspconfig.tsserver.setup(make_config(function(config)
   config.root_dir = lspconfig.util.root_pattern("tsconfig.json")
@@ -187,7 +194,7 @@ lspconfig.denols.setup(make_config(function(config)
   return config
 end))
 
-lspconfig.sumneko_lua.setup(make_config(function(config)
+lspconfig.lua_ls.setup(make_config(function(config)
   config.settings = lua_settings
   config.root_dir = function(fname)
     local util = require("lspconfig/util")
@@ -204,6 +211,11 @@ end))
 
 lspconfig.diagnosticls.setup(make_config(function(config)
   config.settings = diagnosticls_settings
+  return config
+end))
+
+lspconfig.jsonls.setup(make_config(function(config)
+  config.filetypes = { "json", "jsonc" }
   return config
 end))
 

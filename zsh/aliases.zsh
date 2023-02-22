@@ -38,3 +38,9 @@ fi
 alias la="ls -AF ${colorflag}"
 alias lld="ls -l | grep ^d"
 alias rmf="rm -rf"
+
+alias movtogif="bash ~/KWNAS/config/src/sh/gifenc.sh"
+# alias vmrun='/Applications/VMWare\ Fusion.app/Contents/Library/vmrun'
+alias vmrun='/Applications/VMware\ Fusion\ Tech\ Preview.app/Contents/Library/vmrun'
+alias vmwin10='vmrun start /Volumes/T7/Virtual\ Machines.localized/Windows\ 10\ x64.vmwarevm nogui'
+alias vmwin10bye='vmrun suspend /Volumes/T7/Virtual\ Machines.localized/Windows\ 10\ x64.vmwarevm'

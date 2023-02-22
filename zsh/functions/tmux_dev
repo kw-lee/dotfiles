@@ -1,0 +1,5 @@
+tmux new -s "$1" \; \
+  send-keys 'neofetch' C-m \; \
+  split-window -h \; \
+  split-window -v \; \
+  send-keys 'htop' C-m \;

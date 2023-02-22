@@ -48,7 +48,7 @@ startup.setup({
     fold_section = false,
     title = "Footer",
     margin = 5,
-    content = { "https://github.com/nicknisi/dotfiles" },
+    content = { "https://github.com/kw-lee/dotfiles" },
     highlight = "Number",
     default_color = ""
   },

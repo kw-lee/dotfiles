@@ -173,8 +173,8 @@ function setup_terminfo() {
     info "adding tmux.terminfo"
     tic -x "$DOTFILES/resources/tmux.terminfo"
 
-    info "adding xterm-256color-italic.terminfo"
-    tic -x "$DOTFILES/resources/xterm-256color-italic.terminfo"
+    info "adding xterm-256color.terminfo"
+    tic -x "$DOTFILES/resources/xterm-256color.terminfo"
 }
 
 setup_macos() {

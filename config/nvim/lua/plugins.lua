@@ -154,18 +154,18 @@ require("lazy").setup({
   { "windwp/nvim-autopairs", config = true },
   -- Style the tabline without taking over how tabs and buffers work in Neovim
   { "alvarosevilla95/luatab.nvim", config = true }, -- enable copilot support for Neovim
-  {
-    "github/copilot.vim",
-    config = function()
-      -- if a copilot-aliased version of node exists from fnm, use that
-      local copilot_node_command = vim.env.FNM_DIR .. "/aliases/copilot/bin/node"
-      if utils.file_exists(copilot_node_command) then
-        -- vim.g.copilot_node_command = copilot_node_path
-        -- for some reason, this works but the above line does not
-        vim.cmd('let g:copilot_node_command = "' .. copilot_node_command .. '"')
-      end
-    end
-  }, -- improve the default neovim interfaces, such as refactoring
+  -- {
+    -- "github/copilot.vim",
+    -- config = function()
+    --   -- if a copilot-aliased version of node exists from fnm, use that
+    --   local copilot_node_command = vim.env.FNM_DIR .. "/aliases/copilot/bin/node"
+    --   if utils.file_exists(copilot_node_command) then
+    --     -- vim.g.copilot_node_command = copilot_node_path
+    --     -- for some reason, this works but the above line does not
+    --     vim.cmd('let g:copilot_node_command = "' .. copilot_node_command .. '"')
+    --   end
+    -- end
+  -- }, -- improve the default neovim interfaces, such as refactoring
   { "stevearc/dressing.nvim", event = "VeryLazy" }, -- Navigate a code base with a really slick UI
   {
     "nvim-telescope/telescope.nvim",

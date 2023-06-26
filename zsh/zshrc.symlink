@@ -18,7 +18,7 @@ prepend_path $DOTFILES/bin
 prepend_path $HOME/bin
 prepend_path $HOME/.jenv/bin
 
-prepend_path $(brew --prefix)/opt/llvm/bin
+# prepend_path $(brew --prefix)/opt/llvm/bin
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 # export PATH="$(brew --prefix)/opt/llvm/bin:$PATH"

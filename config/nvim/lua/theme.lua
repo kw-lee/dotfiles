@@ -21,7 +21,7 @@ local colors = {
   violet = "#a9a1e1",
   white = "#eff0f1",
   yellow = "#f09f17",
-  black = "#202328"
+  black = "#202328",
 }
 
 local icons = {
@@ -39,7 +39,7 @@ local icons = {
   hint = " ",
   -- lsp = " ",
   lsp = " ",
-  line = "☰ ",
+  line = "󰍜 ",
   -- git icons
   git = "",
   conflict = "",
@@ -47,7 +47,7 @@ local icons = {
   staged = "✓ ",
   unmerged = " ",
   renamed = "➜ ",
-  untracked = "★ ",
+  untracked = " ",
   -- deleted = " ",
   ignored = "◌ ",
   modified = "● ",
@@ -69,7 +69,7 @@ local icons = {
   -- misc
   devil = " ",
   bsd = " ",
-  ghost = " "
+  ghost = " ",
 }
 
 local border = {
@@ -80,7 +80,7 @@ local border = {
   { "🭿", "FloatBorder" },
   { "▁", "FloatBorder" },
   { "🭼", "FloatBorder" },
-  { "▏", "FloatBorder" }
+  { "▏", "FloatBorder" },
 }
 
 return { colors = colors, icons = icons, border = border }
